@@ -1,16 +1,16 @@
 # Cajero-Automatico-tpi
-add
+
 Simulación de un cajero automático desarrollada en Python como Trabajo Práctico Integrador de la materia **Programación Avanzada**.
 
 ---
 
-## 📌 Descripción
+## Descripción
 
 El sistema modela el comportamiento de un cajero automático real, donde las operaciones disponibles dependen del **estado actual** de la sesión. Un usuario solo puede operar si insertó su tarjeta y validó su PIN correctamente.
 
 ---
 
-## 🎯 Conceptos aplicados
+## Conceptos aplicados
 
 - **Programación Orientada a Objetos**: encapsulamiento, abstracción, herencia y polimorfismo.
 - **Patrón de Diseño State**: el cajero delega cada acción al estado actual, cambiando su comportamiento sin modificar la clase principal.
@@ -19,7 +19,7 @@ El sistema modela el comportamiento de un cajero automático real, donde las ope
 
 ---
 
-## 🗂️ Estructura del proyecto
+## Estructura del proyecto
 
 ```
 cajero-automatico-tpi/
@@ -64,7 +64,7 @@ python main.py
 
 ---
 
-## 💻 Ejemplo de salida
+## Ejemplo de salida
 
 ```
 ==================================================
@@ -98,9 +98,9 @@ python main.py
 
 ---
 
-## 👥 Integrantes
+## Integrantes
 
-- Integrante 1
-- Integrante 2
-- Integrante 3
-- Integrante 4
+- Arbona Yasmin
+- Micaela Cafardo
+- Juan Esparza
+- Lucas Colosimo
