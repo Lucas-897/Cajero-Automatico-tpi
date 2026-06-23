@@ -1,4 +1,4 @@
-from states.estado_atm import EstadoATM
+from atm.states.estado_atm import EstadoATM
 
 MAX_INTENTOS = 3
 

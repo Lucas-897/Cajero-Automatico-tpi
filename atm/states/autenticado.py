@@ -1,4 +1,4 @@
-from states.estado_atm import EstadoATM
+from atm.states.estado_atm import EstadoATM
 
 
 class Autenticado(EstadoATM):

@@ -1,4 +1,4 @@
-from models.cuenta import Cuenta
+from atm.models.cuenta import Cuenta
 
 
 class Tarjeta:

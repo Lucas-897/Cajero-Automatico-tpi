@@ -1,7 +1,5 @@
-from states.sin_tarjeta import SinTarjeta
-from states.tarjeta_insertada import TarjetaInsertada
-from states.autenticado import Autenticado
-from models.tarjeta import Tarjeta
+from atm.states import SinTarjeta, TarjetaInsertada, Autenticado
+from atm.models import Tarjeta
 
 
 class ATM:

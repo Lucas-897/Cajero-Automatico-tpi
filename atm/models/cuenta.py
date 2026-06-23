@@ -1,4 +1,4 @@
-from models.transaccion import Transaccion
+from atm.models.transaccion import Transaccion
 
 
 class Cuenta:
