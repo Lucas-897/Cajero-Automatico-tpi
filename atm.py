@@ -24,7 +24,7 @@ class ATM:
         self.tarjeta = tarjeta
         self._estado_actual.insertar_tarjeta(self)
 
-    def ingresar_pin(self, pin: int) -> None:
+    def ingresar_pin(self, pin: str) -> None:
         self._estado_actual.ingresar_pin(self, pin)
 
     def consultar_saldo(self) -> None:

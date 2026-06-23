@@ -3,21 +3,30 @@ from models.transaccion import Transaccion
 
 class Cuenta:
     def __init__(self, titular: str, saldo: float):
-        self.titular = titular
-        self.saldo = saldo
+        self._titular = titular
+        self._saldo = saldo
         self.transacciones: list[Transaccion] = []
-
+    # usamos @property para poder leer el saldo como un atributo, pero no permitir modificarlo directamente
+    
+    @property
+    def titular(self) -> str:
+        return self._titular
+    
+    @property
+    def saldo(self) -> float:
+        return self._saldo
+    
     def consultar_saldo(self) -> float:
-        return self.saldo
+        return self._saldo
 
     def extraer(self, monto: float) -> bool:
         if monto <= 0:
             print("[ERROR] El monto debe ser mayor a cero.")
             return False
-        if monto > self.saldo:
+        if monto > self._saldo:
             print("[ERROR] Saldo insuficiente.")
             return False
-        self.saldo -= monto
+        self._saldo -= monto
         self.transacciones.append(Transaccion("EXTRACCION", monto))
         return True
 
@@ -25,6 +34,6 @@ class Cuenta:
         if monto <= 0:
             print("[ERROR] El monto debe ser mayor a cero.")
             return False
-        self.saldo += monto
+        self._saldo += monto
         self.transacciones.append(Transaccion("DEPOSITO", monto))
         return True

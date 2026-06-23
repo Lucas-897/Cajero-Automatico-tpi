@@ -2,7 +2,7 @@ from models.cuenta import Cuenta
 
 
 class Tarjeta:
-    def __init__(self, numero: str, pin: str, cuenta: Cuenta):
+    def __init__(self, numero: int, pin: str, cuenta: Cuenta):
         self.numero = numero
         self._pin = pin
         self.cuenta = cuenta

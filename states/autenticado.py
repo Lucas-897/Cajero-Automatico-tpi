@@ -10,7 +10,7 @@ class Autenticado(EstadoATM):
         print("[ATM] Ya está autenticado/a.")
 
     def consultar_saldo(self, atm) -> None:
-        saldo = atm.tarjeta.cuenta.consultar_saldo()
+        saldo = atm.tarjeta.cuenta.saldo
         titular = atm.tarjeta.cuenta.titular
         print(f"[ATM] Titular: {titular} | Saldo disponible: ${saldo:.2f}")
 
