@@ -1,3 +1,3 @@
-from .menu import test_no_interactivo
+from .menu import automatico, interactivo
 
-__all__=["test_no_interactivo"]
+__all__=["automatico", "interactivo"]
