@@ -14,4 +14,4 @@ if __name__ == "__main__":
     if modo == "auto":
         menu.automatico(cuenta, tarjeta, cajero)
     else:
-        menu.interactivo(cuenta, tarjeta, cajero)
+        menu.menu(cuenta, tarjeta, cajero)
