@@ -41,9 +41,11 @@ if __name__ == "__main__":
 
     cajero.extraer(1500)
     cajero.consultar_saldo()
-
     cajero.extraer(99999)  # saldo insuficiente
-
+    print("\n--- Historial de transacciones ---")
+    for transaccion in cuenta.transacciones: 
+        print(transaccion)
+    
     # Fin de sesión
     print("\n--- Retirando tarjeta ---")
     cajero.retirar_tarjeta()

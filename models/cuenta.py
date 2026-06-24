@@ -5,7 +5,7 @@ class Cuenta:
     def __init__(self, titular: str, saldo: float):
         self._titular = titular
         self._saldo = saldo
-        self.transacciones: list[Transaccion] = []
+        self._transacciones: list[Transaccion] = []
     # usamos @property para poder leer el saldo como un atributo, pero no permitir modificarlo directamente
     
     @property
@@ -15,6 +15,9 @@ class Cuenta:
     @property
     def saldo(self) -> float:
         return self._saldo
+    @property
+    def transacciones(self) -> list[Transaccion]:
+        return self._transacciones
     
     def consultar_saldo(self) -> float:
         return self._saldo
@@ -27,7 +30,7 @@ class Cuenta:
             print("[ERROR] Saldo insuficiente.")
             return False
         self._saldo -= monto
-        self.transacciones.append(Transaccion("EXTRACCION", monto))
+        self._transacciones.append(Transaccion("EXTRACCION", monto))
         return True
 
     def depositar(self, monto: float) -> bool:
@@ -35,5 +38,5 @@ class Cuenta:
             print("[ERROR] El monto debe ser mayor a cero.")
             return False
         self._saldo += monto
-        self.transacciones.append(Transaccion("DEPOSITO", monto))
+        self._transacciones.append(Transaccion("DEPOSITO", monto))
         return True
