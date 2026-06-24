@@ -8,7 +8,6 @@ class TipoTransaccion(Enum):
     las operaciones posibles a las que el sistema conoce."""
     DEPOSITO = "DEPOSITO"
     EXTRACCION = "EXTRACCION"
-    TRANSFERENCIA = "TRANSFERENCIA"
 
 
 @dataclass(frozen=True)

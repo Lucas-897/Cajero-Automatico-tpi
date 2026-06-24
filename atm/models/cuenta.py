@@ -102,29 +102,8 @@ class Cuenta:
         self._registrar_transaccion(TipoTransaccion.EXTRACCION, monto)
         return True
 
-    def transferir(self, monto: float, destino: "Cuenta") -> bool:
-        """Transfiere un monto a otra cuenta.
-        
-        Args:
-            monto: Cantidad a transferir. Debe ser mayor a cero y no superar el saldo.
-            destino: Cuenta que recibe el dinero.
-
-        Returns:
-            True si la transferencia fue exitosa, False en caso contrario.
-        """
-        if monto <= 0:
-            print("[ERROR] El monto debe ser mayor a cero.")
-            return False
-        if monto > self._saldo:
-            print("[ERROR] Saldo insuficiente.")
-            return False
-
-        self._registrar_transaccion(TipoTransaccion.TRANSFERENCIA, monto)
-        destino.depositar(monto)
-        return True
 
     # ── Internos ──────────────────────────────────────────────────
-
     def _registrar_transaccion(self, tipo: TipoTransaccion, monto: float) -> None:
         """Crea y guarda la transacción, luego actualiza el saldo.
         

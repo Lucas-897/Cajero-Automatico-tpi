@@ -63,8 +63,5 @@ class ATM:
     def extraer(self, monto: float) -> ResultadoOperacion:
         return self._estado_actual.extraer(self, monto)
 
-    def transferir(self, monto: float, destino: "Cuenta") -> ResultadoOperacion:
-        return self._estado_actual.transferir(self, monto, destino)
-
     def retirar_tarjeta(self) -> ResultadoOperacion:
         return self._estado_actual.retirar_tarjeta(self)

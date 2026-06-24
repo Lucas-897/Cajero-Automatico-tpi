@@ -26,11 +26,6 @@ class Autenticado(EstadoATM):
             return ResultadoOperacion(True, f"Extracción exitosa de ${monto:.2f}. Retire su dinero.")
         return ResultadoOperacion(False, "Monto inválido o saldo insuficiente.")
 
-    def transferir(self, atm, monto: float, destino) -> ResultadoOperacion:
-        if atm.tarjeta.cuenta.transferir(monto, destino):
-            return ResultadoOperacion(True, f"Transferencia exitosa de ${monto:.2f} a {destino.titular}.")
-        return ResultadoOperacion(False, "Monto inválido o saldo insuficiente.")
-
     def retirar_tarjeta(self, atm) -> ResultadoOperacion:
         atm.resetear_intentos()
         atm.tarjeta = None

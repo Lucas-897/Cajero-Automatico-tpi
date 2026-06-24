@@ -30,9 +30,5 @@ class EstadoATM(ABC):
         pass
 
     @abstractmethod
-    def transferir(self, atm, monto: float, destino) -> ResultadoOperacion:
-        pass
-
-    @abstractmethod
     def retirar_tarjeta(self, atm) -> ResultadoOperacion:
         pass

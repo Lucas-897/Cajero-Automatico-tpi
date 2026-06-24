@@ -22,8 +22,5 @@ class SinTarjeta(EstadoATM):
     def extraer(self, atm, monto: float) -> ResultadoOperacion:
         return ResultadoOperacion(False, "Primero debe insertar una tarjeta.")
 
-    def transferir(self, atm, monto: float, destino) -> ResultadoOperacion:
-        return ResultadoOperacion(False, "Primero debe insertar una tarjeta.")
-
     def retirar_tarjeta(self, atm) -> ResultadoOperacion:
         return ResultadoOperacion(False, "No hay ninguna tarjeta insertada.")
