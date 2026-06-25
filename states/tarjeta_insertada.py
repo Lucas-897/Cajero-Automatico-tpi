@@ -10,15 +10,15 @@ class TarjetaInsertada(EstadoATM):
         if atm.tarjeta.validar_pin(pin):
             atm.resetear_intentos()
             print("[ATM] PIN correcto. Bienvenido/a.")
-            atm.set_estado(atm.estado_autenticado)
+            atm.set_estado(atm.estado_autenticado) # cambio de estado a autenticado (tarjeta + pin ok)
         else:
-            agotados = atm.registrar_intento_fallido()
-            if agotados:
+            intentos_agotados = atm.registrar_intento_fallido()
+            if intentos_agotados:  # Se agotaron los intentos
                 print("[ATM] Demasiados intentos. Tarjeta bloqueada.")
-                atm.tarjeta.bloquear()
-                atm.tarjeta = None
+                atm.tarjeta.bloquear() #    bloquear tarjeta
+                atm.tarjeta = None # Tragarse la tarjeta (quitarla)
                 atm.resetear_intentos()
-                atm.set_estado(atm.estado_sin_tarjeta)
+                atm.set_estado(atm.estado_sin_tarjeta) # Cambio de estado a sin tarjeta.
             else:
                 print(f"[ATM] PIN incorrecto. Intentos restantes: {atm.intentos_restantes()}.")
 

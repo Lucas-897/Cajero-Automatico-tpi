@@ -41,11 +41,18 @@ class ATM:
     def retirar_tarjeta(self) -> None:
         self._estado_actual.retirar_tarjeta(self)
 
-    def registrar_intento_fallido(self) -> None:
+    
+    # ------------- INTENTOS DE INGRESO DE PIN ------------------------
+    def registrar_intento_fallido(self) -> bool:
+        """ Registra un intento fallido de ingreso de PIN y devuelve True si se agotaron los intentos. """
         self._intentos_pin -= 1
+        return self._intentos_pin <= 0 # ¿se agotaron los intentos?
+
 
     def intentos_restantes(self) -> int:
+        """ Devuelve la cantidad de intentos de PIN restantes antes de bloquear la tarjeta. """
         return self._intentos_pin
     
     def resetear_intentos(self) -> None:
+        """ Resetea el contador de intentos de PIN a su valor máximo. """
         self._intentos_pin = self._MAX_INTENTOS_PIN
