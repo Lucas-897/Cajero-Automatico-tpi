@@ -8,13 +8,18 @@ Simulación de un cajero automático desarrollada en Python como Trabajo Prácti
 
 El sistema modela el comportamiento de un cajero automático real, donde las operaciones disponibles dependen del **estado actual** de la sesión. Un usuario solo puede operar si insertó su tarjeta y validó su PIN correctamente.
 
+## Documentación
+
+- [Diagrama UML y explicación de POO](docs/uml.md)
+- [Guía de presentación y exposición](docs/presentacion.md)
+
 ---
 
 ## Conceptos aplicados
 
 - **Programación Orientada a Objetos**: encapsulamiento, abstracción, herencia y polimorfismo.
 - **Patrón de Diseño State**: el cajero delega cada acción al estado actual, cambiando su comportamiento sin modificar la clase principal.
-- **Composición**: `Tarjeta` contiene una `Cuenta`, `Cuenta` contiene una lista de `Transaccion`.
+- **Relación entre objetos**: `Tarjeta` referencia una `Cuenta` y `Cuenta` contiene una lista de `Transaccion`.
 - **Clases abstractas**: `EstadoATM` define la interfaz que todos los estados deben implementar.
 
 ---
@@ -25,6 +30,7 @@ El sistema modela el comportamiento de un cajero automático real, donde las ope
 cajero-automatico-tpi/
 ├── main.py                  # Punto de entrada y escenario de demostración
 ├── atm.py                   # Clase principal, delega al estado actual
+├── docs/                   # Documentación del proyecto
 ├── models/
 │   ├── cuenta.py            # Saldo, extracción y depósito
 │   ├── tarjeta.py           # Número, PIN y referencia a Cuenta
