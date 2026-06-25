@@ -1,15 +1,17 @@
-from states.sin_tarjeta import SinTarjeta
-from states.tarjeta_insertada import TarjetaInsertada
-from states.autenticado import Autenticado
-from models.tarjeta import Tarjeta
+from models import Tarjeta
+from states import SinTarjeta, TarjetaInsertada, Autenticado
 
 
 class ATM:
+
+    _MAX_INTENTOS_PIN = 3
+
     def __init__(self):
         # Instancia de cada estado posible
         self.estado_sin_tarjeta = SinTarjeta()
         self.estado_tarjeta_insertada = TarjetaInsertada()
         self.estado_autenticado = Autenticado()
+        self._intentos_pin = self._MAX_INTENTOS_PIN
 
         # Estado inicial
         self._estado_actual = self.estado_sin_tarjeta
@@ -38,3 +40,12 @@ class ATM:
 
     def retirar_tarjeta(self) -> None:
         self._estado_actual.retirar_tarjeta(self)
+
+    def registrar_intento_fallido(self) -> None:
+        self._intentos_pin -= 1
+
+    def intentos_restantes(self) -> int:
+        return self._intentos_pin
+    
+    def resetear_intentos(self) -> None:
+        self._intentos_pin = self._MAX_INTENTOS_PIN

@@ -1,6 +1,5 @@
 from atm import ATM
-from models.cuenta import Cuenta
-from models.tarjeta import Tarjeta
+from models import Cuenta, Tarjeta
 
 
 if __name__ == "__main__":

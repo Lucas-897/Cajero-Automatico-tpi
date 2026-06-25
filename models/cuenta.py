@@ -6,8 +6,8 @@ class Cuenta:
         self._titular = titular
         self._saldo = saldo
         self._transacciones: list[Transaccion] = []
+
     # usamos @property para poder leer el saldo como un atributo, pero no permitir modificarlo directamente
-    
     @property
     def titular(self) -> str:
         return self._titular

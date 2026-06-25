@@ -6,6 +6,13 @@ class Tarjeta:
         self.numero = numero
         self._pin = pin
         self.cuenta = cuenta
+        self._bloqueada = False
 
     def validar_pin(self, pin: str) -> bool:
         return self._pin == pin
+
+    def bloquear(self) -> None:
+        self._bloqueada = True  # faltaba el _
+
+    def esta_bloqueada(self) -> bool:
+        return self._bloqueada
