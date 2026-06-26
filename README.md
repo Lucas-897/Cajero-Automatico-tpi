@@ -22,6 +22,9 @@ El sistema modela el comportamiento de un cajero automático real, donde las ope
 - **Relación entre objetos**: `Tarjeta` referencia una `Cuenta` y `Cuenta` contiene una lista de `Transaccion`.
 - **Clases abstractas**: `EstadoATM` define la interfaz que todos los estados deben implementar.
 
+  ##Diapositiva del proyecto.
+  https://docs.google.com/presentation/d/1IzyZHoW5_wjPtqK_i8X3YNDkxWoHcKXgAcOnI21WkYI/edit?usp=sharing
+
 ---
 
 ## Estructura del proyecto
