@@ -84,7 +84,7 @@ if __name__ == "__main__":
     cajero.consultar_saldo()
     cajero.extraer(500)
     cajero.depositar(1000)
- 
+
 
  # CASO 3 - OPERACIONES DESPUÉS DE BLOQUEO
 
@@ -106,6 +106,10 @@ if __name__ == "__main__":
     cajero.depositar(500)
     cajero.extraer(1000)
     cajero.consultar_saldo()
+
+    print("\n--- Historial de transacciones ---")
+    for transaccion in cuenta2.transacciones: 
+        print(transaccion)
 
     print("\n--- Retirando tarjeta ---")
     cajero.retirar_tarjeta()
